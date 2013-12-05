@@ -1,0 +1,56 @@
+{
+   "abstract" : "Build and make available libarchive on MSWin32",
+   "author" : [
+      "Graham Ollis <plicease@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.133380",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Alien-Libarchive-MSWin32",
+   "no_index" : {
+      "directory" : [
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Alien::Base" : "0.002",
+            "Alien::CMake" : "0",
+            "File::ShareDir" : "1.03"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Alien::Base" : "0.002",
+            "File::ShareDir" : "1.03",
+            "perl" : "5.006"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/plicease/alien-libarchive-mswin32/issues"
+      },
+      "homepage" : "http://perl.wdlabs.com/Alien-Libarchive-MSWin32/",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/plicease/alien-libarchive-mswin32.git",
+         "web" : "https://github.com/plicease/alien-libarchive-mswin32"
+      }
+   },
+   "version" : "0.01"
+}
+
