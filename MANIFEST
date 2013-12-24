@@ -1,4 +1,3 @@
-.travis.yml
 Build.PL
 Changes
 INSTALL
@@ -16,6 +15,7 @@ inc/ModuleBuild.pm
 lib/Alien/Libarchive/MSWin32.pm
 t/00_diag.t
 t/00_diag.txt
+t/basic.t
 t/use.t
 xt/release/build_environment.t
 xt/release/changes.t
@@ -26,5 +26,4 @@ xt/release/pod.t
 xt/release/pod_spelling_common.t
 xt/release/pod_spelling_system.t
 xt/release/release.yml
-xt/release/strict.t
 xt/release/version.t

@@ -24,6 +24,9 @@
             "Alien::Base" : "0.002",
             "Alien::CMake" : "0",
             "File::ShareDir" : "1.03"
+         },
+         "suggests" : {
+            "Alien::bz2" : "0"
          }
       },
       "runtime" : {
@@ -35,6 +38,7 @@
       },
       "test" : {
          "requires" : {
+            "Test::CChecker" : "0",
             "Test::More" : "0"
          }
       }
@@ -51,6 +55,6 @@
          "web" : "https://github.com/plicease/alien-libarchive-mswin32"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 

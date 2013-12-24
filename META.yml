@@ -3,6 +3,7 @@ abstract: 'Build and make available libarchive on MSWin32'
 author:
   - 'Graham Ollis <plicease@cpan.org>'
 build_requires:
+  Test::CChecker: 0
   Test::More: 0
 configure_requires:
   Alien::Base: 0.002
@@ -26,4 +27,4 @@ resources:
   bugtracker: https://github.com/plicease/alien-libarchive-mswin32/issues
   homepage: http://perl.wdlabs.com/Alien-Libarchive-MSWin32/
   repository: git://github.com/plicease/alien-libarchive-mswin32.git
-version: 0.01
+version: 0.02

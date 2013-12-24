@@ -32,7 +32,7 @@ my %module_build_args = (
     "Graham Ollis <plicease\@cpan.org>"
   ],
   "dist_name" => "Alien-Libarchive-MSWin32",
-  "dist_version" => "0.01",
+  "dist_version" => "0.02",
   "license" => "perl",
   "module_name" => "Alien::Libarchive::MSWin32",
   "recommends" => {},
@@ -44,12 +44,14 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "Test::CChecker" => 0,
     "Test::More" => 0
   }
 );
 
 
 my %fallback_build_requires = (
+  "Test::CChecker" => 0,
   "Test::More" => 0
 );
 
