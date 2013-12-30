@@ -5,7 +5,7 @@ use warnings;
 use base qw( Alien::Base );
 
 # ABSTRACT: Build and make available libarchive on MSWin32
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 
 sub import
@@ -51,7 +51,7 @@ Alien::Libarchive::MSWin32 - Build and make available libarchive on MSWin32
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
