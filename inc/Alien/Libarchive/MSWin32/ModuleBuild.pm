@@ -3,6 +3,7 @@ package Alien::Libarchive::MSWin32::ModuleBuild;
 use strict;
 use warnings;
 use base qw( Alien::Base::ModuleBuild );
+use Config;
 
 my $cflags = '';
 my $libs   = '';
@@ -29,6 +30,11 @@ sub alien_do_commands
   local $ENV{CFLAGS} = $cflags;
   local $ENV{LIBS}   = $libs;
   
+  if($Config{ld} =~ /link(\.exe)?$/i)
+  {
+    $self->config_data( msvs => 1 );
+  }
+  
   $self->SUPER::alien_do_commands($phase);
 }
 
@@ -37,6 +43,7 @@ package
 
 use Alien::CMake;
 use File::Which qw( which );
+use Config;
 
 sub _system
 {
@@ -48,7 +55,14 @@ sub _system
 
 sub _make ()
 {
-  which('mingw32-make') || which('gmake') || which('make');
+  if($Config{make} =~ /nmake(\.exe)?$/)
+  {
+    return $Config{make};
+  }
+  else
+  {
+    return which('mingw32-make') || which('gmake') || which('make');
+  }
 }
 
 my $make;
@@ -58,7 +72,7 @@ sub alien_build ()
   my $dir = shift @ARGV;
   my $cmake  = Alien::CMake->config('prefix') . '/bin/cmake.exe';
   $make   ||= _make();
-  my $system = 'MinGW Makefiles';
+  my $system = $Config{make} =~ /nmake(\.exe)?$/ ? 'NMake Makefiles' : 'MinGW Makefiles';
   _system $cmake,
     -G => $system,
     "-DCMAKE_MAKE_PROGRAM:PATH=$make",

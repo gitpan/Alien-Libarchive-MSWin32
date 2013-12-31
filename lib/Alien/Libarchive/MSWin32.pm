@@ -5,7 +5,7 @@ use warnings;
 use base qw( Alien::Base );
 
 # ABSTRACT: Build and make available libarchive on MSWin32
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 
 sub import
@@ -29,7 +29,18 @@ sub cflags
 
 sub libs
 {
-  "-L" . shift->dist_dir . "/lib -larchive";
+  my $self = shift;
+  if($self->config('msvs'))
+  {
+    require File::Spec;
+    my $path = File::Spec->catdir($self->dist_dir, "lib");
+    $path =~ s{\\}{/}g;
+    return join(' ', join(':', '-libpath', $path), 'archive.lib');
+  }
+  else
+  {
+    return "-L" . $self->dist_dir . "/lib -larchive";
+  }
 }
 
 sub dll_path
@@ -51,7 +62,7 @@ Alien::Libarchive::MSWin32 - Build and make available libarchive on MSWin32
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 

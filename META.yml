@@ -27,4 +27,4 @@ resources:
   bugtracker: https://github.com/plicease/alien-libarchive-mswin32/issues
   homepage: http://perl.wdlabs.com/Alien-Libarchive-MSWin32/
   repository: git://github.com/plicease/alien-libarchive-mswin32.git
-version: 0.03
+version: 0.04
